@@ -16,13 +16,13 @@ public class HugoActivity extends Activity {
 
     printArgs("The", "Quick", "Brown", "Fox");
 
-    Log.i("Fibonacci", "fibonacci's 4th number is " + fibonacci(4));
+//    Log.i("Fibonacci", "fibonacci's 4th number is " + fibonacci(4));
 
     Greeter greeter = new Greeter("Jake");
-    Log.d("Greeting", greeter.sayHello());
+//    Log.i("Greeting", greeter.sayHello());
 
-    Charmer charmer = new Charmer("Jake");
-    Log.d("Charming", charmer.askHowAreYou());
+    Charmer charmer = new Charmer("Jake");//外部类访问内部类的私有构造函数
+//    Log.i("Charming", charmer.askHowAreYou());
 
     startSleepyThread();
   }
@@ -58,7 +58,7 @@ public class HugoActivity extends Activity {
       private void sleepyMethod(long milliseconds) {
         SystemClock.sleep(milliseconds);
       }
-    }, "I'm a lazy thr.. bah! whatever!").start();
+    }, "ThreadName").start();
   }
 
   @DebugLog
@@ -78,7 +78,7 @@ public class HugoActivity extends Activity {
   static class Charmer {
     private final String name;
 
-    private Charmer(String name) {
+    private Charmer(String name) {////外部类访问内部类的私有构造函数
       this.name = name;
     }
 
