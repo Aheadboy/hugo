@@ -3,7 +3,7 @@ import org.aspectj.bridge.MessageHandler
 import org.aspectj.tools.ajc.Main
 
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.github.dcendents.android-maven' //注意版本与gradle版本的匹配问题。版本在根的gradle设置。
 
 dependencies {
   compile 'org.aspectj:aspectjrt:1.8.6'
@@ -17,8 +17,8 @@ android {
   buildToolsVersion rootProject.ext.buildToolsVersion
 
   compileOptions {
-    sourceCompatibility JavaVersion.VERSION_1_7
-    targetCompatibility JavaVersion.VERSION_1_7
+    sourceCompatibility 1.8
+    targetCompatibility 1.8
   }
 }
 
